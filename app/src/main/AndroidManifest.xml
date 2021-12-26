@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".NoodleList"
+            android:exported="false" />
+        <activity
+            android:name=".DrinkList"
+            android:exported="false" />
+        <activity
             android:name=".FoodList"
             android:exported="false" />
         <activity

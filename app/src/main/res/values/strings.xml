@@ -13,5 +13,9 @@
         <item>@drawable/pineapple</item>
         <item>@drawable/strawberry</item>
         <item>@drawable/tomato</item>
+        <item>@drawable/rice</item>
+        <item>@drawable/rice1</item>
+
+
     </integer-array>
 </resources>
