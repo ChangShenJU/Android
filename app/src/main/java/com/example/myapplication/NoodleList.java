@@ -73,7 +73,7 @@ public class NoodleList extends AppCompatActivity {
     private TextView textView1,tv_num;
     private ImageButton ImgBtn_plus,ImgBtn_sub;
     private Button btn_AddFood,btn_FoodList,btn_DrinkList,btn_RiceList;
-    int num=0;
+    int num,image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,15 +131,60 @@ public class NoodleList extends AppCompatActivity {
         });
 
 
-        btn_AddFood.setOnClickListener(new View.OnClickListener() {   //按鈕換頁
+        btn_AddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.setClass(NoodleList.this ,FoodList.class);
+                if(image==0&&num>0){
+                    Value v = (Value)getApplicationContext();
+
+                    v.setNumber7(num);
+
+
+                }
+                else if(image==1&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber8(num);
+
+                }
+                else if(image==2&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber9(num);
+
+                }
+                else if(image==3&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber10(num);
+
+                }
+                else if(image==4&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber11(num);
+
+                }
+                else if(image==5&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber12(num);
+
+                }
+                else if(image==6&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber13(num);
+
+                }
                 Toast toast=Toast.makeText(NoodleList.this,"餐點已加入點餐籃!",
                         Toast.LENGTH_SHORT);
                 toast.show();
+
             }
         });
-
 
 
         Data[] foodData = new Data[foodNameArray.length];
@@ -165,25 +210,46 @@ public class NoodleList extends AppCompatActivity {
                 switch (position){
                     case 0:
                         textView1.setText("餐點名稱:牛肉麵\n餐點價格:90元\n食材:白麵條、牛腩肉、洋蔥、\n胡蘿蔔、青江菜");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=0;
                         break;
                     case 1:
                         textView1.setText("餐點名稱:湯麵\n餐點價格:50元\n食材:黃麵條、豬肉片、青蔥、\n雞蛋");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=1;
                         break;
                     case 2:
                         textView1.setText("餐點名稱:炒麵\n餐點價格:60元\n食材:黃麵條、豬肉、洋蔥、\n胡蘿蔔、雞蛋");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=2;
                         break;
                     case 3:
                         textView1.setText("餐點名稱:烏龍麵\n餐點價格:80元\n食材:烏龍麵、豬肉、青蔥、\n香菇、雞蛋");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=3;
                         break;
                     case 4:
                         textView1.setText("餐點名稱:番茄肉醬義大利麵\n餐點價格:85元\n食材:義大利麵條、番茄、\n洋蔥、香菇、蒜末");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=4;
                         break;
                     case 5:
                         textView1.setText("餐點名稱:青醬雞肉義大利麵\n餐點價格:85元\n食材:義大利麵條、雞胸肉、\n洋蔥、白酒、蒜末、羅勒葉");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=5;
                         break;
 
                     case 6:
                         textView1.setText("餐點名稱:白醬蘑菇義大利麵\n餐點價格:85元\n食材:義大利麵條、蘑菇、\n洋蔥、牛奶、蒜末、羅勒葉");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=6;
                         break;
 
                 }

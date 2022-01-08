@@ -72,7 +72,7 @@ public class DrinkList extends AppCompatActivity {
     private TextView textView1,tv_num;
     private ImageButton ImgBtn_plus,ImgBtn_sub;
     private Button btn_AddFood,btn_FoodList,btn_RiceList,btn_NoodleList;
-    int num=0;
+    int num=0,image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,12 +129,37 @@ public class DrinkList extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_AddFood.setOnClickListener(new View.OnClickListener() {   //按鈕換頁
+        btn_AddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.setClass(DrinkList.this ,FoodList.class);
+                if(image==0&&num>0){
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber14(num);
+                }
+                else if(image==1&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber15(num);
+
+                }
+                else if(image==2&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber16(num);
+
+                }
+                if(image==3&&num>0) {
+
+                    Value v = (Value) getApplicationContext();
+                    v.setNumber17(num);
+                }
+
                 Toast toast=Toast.makeText(DrinkList.this,"餐點已加入點餐籃!",
                         Toast.LENGTH_SHORT);
                 toast.show();
+
             }
         });
 
@@ -162,15 +187,27 @@ public class DrinkList extends AppCompatActivity {
                 switch (position){
                     case 0:
                         textView1.setText("餐點名稱:草莓蛋糕\n餐點價格:40元");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=0;
                         break;
                     case 1:
                         textView1.setText("餐點名稱:巧克力蛋糕\n餐點價格:40元");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=1;
                         break;
                     case 2:
                         textView1.setText("餐點名稱:珍珠奶茶\n餐點價格:50元");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=2;
                         break;
                     case 3:
                         textView1.setText("餐點名稱:咖啡\n餐點價格:60元");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=3;
                         break;
 
 

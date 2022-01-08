@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +21,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     class Data{
         int photo;
         String name;
+
     }
+
+
+
     public class  MyAdapter extends  BaseAdapter{
         private MainActivity.Data[] data ;
         private int view ;
@@ -64,8 +72,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    int price;
     String[] foodNameArray = new String[]{"炒飯","燒鴨飯","咖哩飯","雞肉飯","叉燒飯","燒雞飯","鰻魚飯"
     };
+
     int[] foodPhotoIdArray = new int[]{
             R.drawable.rice,R.drawable.rice1,R.drawable.rice2,R.drawable.rice3,
             R.drawable.rice4,R.drawable.rice5,R.drawable.rice6};
@@ -73,7 +83,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView1,tv_num;
     private ImageButton ImgBtn_plus,ImgBtn_sub;
     private Button btn_AddFood,btn_FoodList,btn_DrinkList,btn_NoodleList,btn_RiceList;
-    int num=0;
+    int num,image;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,12 +144,64 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_AddFood.setOnClickListener(new View.OnClickListener() {   //按鈕換頁
+
+        btn_AddFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this ,FoodList.class);
+                if(num==0){
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber(0);
+                }
+               if(image==0&&num>0){
+                   Value v = (Value)getApplicationContext();
+
+                   v.setNumber(num);
+
+
+                }
+                else if(image==1&&num>0){
+
+                   Value v = (Value)getApplicationContext();
+                   v.setNumber1(num);
+
+                }
+                else if(image==2&&num>0){
+
+                   Value v = (Value)getApplicationContext();
+                   v.setNumber2(num);
+
+                }
+                else if(image==3&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber3(num);
+
+                }
+                else if(image==4&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber4(num);
+
+                }
+                else if(image==5&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber5(num);
+
+                }
+                else if(image==6&&num>0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber6(num);
+
+                }
+
                 Toast toast=Toast.makeText(MainActivity.this,"餐點已加入點餐籃!",
                         Toast.LENGTH_SHORT);
                 toast.show();
+
             }
         });
 
@@ -167,30 +231,47 @@ public class MainActivity extends AppCompatActivity {
                 switch (position){
                     case 0:
                         textView1.setText("餐點名稱:炒飯\n餐點價格:60元\n食材:米飯、豬肉絲、洋蔥、\n高麗菜、雞蛋");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=0;
                         break;
                     case 1:
                         textView1.setText("餐點名稱:燒鴨飯\n餐點價格:80元\n食材:米飯、鴨肉、洋蔥、\n芥藍菜、雞蛋");
+                        num=0;
+                        tv_num.setText(" "+num);
+                        image=1;
                         break;
                     case 2:
                         textView1.setText("餐點名稱:咖哩飯\n餐點價格:70元\n食材:米飯、豬肉切丁、洋蔥、\n胡蘿蔔、馬鈴薯");
+                        num=0;
+                        image=2;
                         break;
                     case 3:
                         textView1.setText("餐點名稱:雞肉飯\n餐點價格:60元\n食材:米飯、雞肉、小黃瓜、\n紅蔥頭");
+                        num=0;
+                        image=3;
                         break;
                     case 4:
                         textView1.setText("餐點名稱:叉燒飯\n餐點價格:80元\n食材:米飯、五花肉、小黃瓜、\n高麗菜、雞蛋");
+                        num=0;
+                        image=4;
                         break;
                     case 5:
                         textView1.setText("餐點名稱:燒雞飯\n餐點價格:80元\n食材:米飯、雞肉、洋蔥、\n花椰菜、雞蛋");
+                        num=0;
+                        image=5;
                         break;
 
                     case 6:
                         textView1.setText("餐點名稱:鰻魚飯\n餐點價格:100元\n食材:米飯、鰻魚、洋蔥、\n蔥花、雞蛋");
+                        num=0;
+                        image=6;
                         break;
 
                 }
 
             }
         });
+
     }
 }
