@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".FoodList">
 
-
     <TextView
         android:id="@+id/TextView1"
         android:layout_width="wrap_content"
@@ -16,7 +15,6 @@
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <TextView
@@ -48,6 +46,7 @@
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TextView1" />
+
     <TextView
         android:id="@+id/TextView4"
         android:layout_width="wrap_content"
@@ -69,6 +68,7 @@
         android:textSize="22.5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TextView1" />
+
     <TextView
         android:id="@+id/TextView6"
         android:layout_width="wrap_content"
@@ -86,14 +86,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="230dp"
         android:layout_marginTop="300dp"
-        android:textSize="20dp"
+        android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TextView1" />
+
     <Button
         android:id="@+id/btn_Menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="550dp"
         android:text="繼續選購"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -103,20 +104,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="550dp"
         android:text="送出菜單"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btn_Delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
         android:layout_marginStart="200dp"
-        android:text="重製"
+        android:layout_marginTop="550dp"
+        android:text="清空點餐籃"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

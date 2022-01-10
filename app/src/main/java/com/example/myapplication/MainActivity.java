@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         ImgBtn_plus.setOnClickListener(new View.OnClickListener() {  //按鈕增加餐點數量
             @Override
             public void onClick(View view) {
-                 num++;
+                num++;
                 tv_num.setText(" "+num);
             }
         });
@@ -122,9 +122,9 @@ public class MainActivity extends AppCompatActivity {
         btn_FoodList.setOnClickListener(new View.OnClickListener() {   //按鈕換頁
             @Override
             public void onClick(View view) {
-            Intent intent=new Intent();
-            intent.setClass(MainActivity.this ,FoodList.class);
-            startActivity(intent);
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this ,FoodList.class);
+                startActivity(intent);
             }
         });
 
@@ -154,44 +154,44 @@ public class MainActivity extends AppCompatActivity {
                     Value v = (Value)getApplicationContext();
                     v.setNumber(0);
                 }
-               if(image==0&&num>0){
-                   Value v = (Value)getApplicationContext();
+                if(image==0&&num>=0){
+                    Value v = (Value)getApplicationContext();
 
-                   v.setNumber(num);
+                    v.setNumber(num);
 
-
-                }
-                else if(image==1&&num>0){
-
-                   Value v = (Value)getApplicationContext();
-                   v.setNumber1(num);
 
                 }
-                else if(image==2&&num>0){
+                else if(image==1&&num>=0){
 
-                   Value v = (Value)getApplicationContext();
-                   v.setNumber2(num);
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber1(num);
 
                 }
-                else if(image==3&&num>0){
+                else if(image==2&&num>=0){
+
+                    Value v = (Value)getApplicationContext();
+                    v.setNumber2(num);
+
+                }
+                else if(image==3&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber3(num);
 
                 }
-                else if(image==4&&num>0){
+                else if(image==4&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber4(num);
 
                 }
-                else if(image==5&&num>0){
+                else if(image==5&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber5(num);
 
                 }
-                else if(image==6&&num>0){
+                else if(image==6&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber6(num);
@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?>parent,View v,
-                int position,long id){
+                                    int position,long id){
                 imgShow.setImageResource(foodPhotoIdArray[position]);
                 ImgBtn_plus.setVisibility(View.VISIBLE);
                 ImgBtn_sub.setVisibility(View.VISIBLE);
@@ -244,27 +244,32 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         textView1.setText("餐點名稱:咖哩飯\n餐點價格:70元\n食材:米飯、豬肉切丁、洋蔥、\n胡蘿蔔、馬鈴薯");
                         num=0;
+                        tv_num.setText(" "+num);
                         image=2;
                         break;
                     case 3:
                         textView1.setText("餐點名稱:雞肉飯\n餐點價格:60元\n食材:米飯、雞肉、小黃瓜、\n紅蔥頭");
                         num=0;
+                        tv_num.setText(" "+num);
                         image=3;
                         break;
                     case 4:
                         textView1.setText("餐點名稱:叉燒飯\n餐點價格:80元\n食材:米飯、五花肉、小黃瓜、\n高麗菜、雞蛋");
                         num=0;
+                        tv_num.setText(" "+num);
                         image=4;
                         break;
                     case 5:
                         textView1.setText("餐點名稱:燒雞飯\n餐點價格:80元\n食材:米飯、雞肉、洋蔥、\n花椰菜、雞蛋");
                         num=0;
+                        tv_num.setText(" "+num);
                         image=5;
                         break;
 
                     case 6:
                         textView1.setText("餐點名稱:鰻魚飯\n餐點價格:100元\n食材:米飯、鰻魚、洋蔥、\n蔥花、雞蛋");
                         num=0;
+                        tv_num.setText(" "+num);
                         image=6;
                         break;
 

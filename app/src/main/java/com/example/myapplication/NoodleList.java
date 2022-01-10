@@ -136,44 +136,44 @@ public class NoodleList extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent();
                 intent.setClass(NoodleList.this ,FoodList.class);
-                if(image==0&&num>0){
+                if(image==0&&num>=0){
                     Value v = (Value)getApplicationContext();
 
                     v.setNumber7(num);
 
 
                 }
-                else if(image==1&&num>0){
+                else if(image==1&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber8(num);
 
                 }
-                else if(image==2&&num>0){
+                else if(image==2&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber9(num);
 
                 }
-                else if(image==3&&num>0){
+                else if(image==3&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber10(num);
 
                 }
-                else if(image==4&&num>0){
+                else if(image==4&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber11(num);
 
                 }
-                else if(image==5&&num>0){
+                else if(image==5&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber12(num);
 
                 }
-                else if(image==6&&num>0){
+                else if(image==6&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber13(num);

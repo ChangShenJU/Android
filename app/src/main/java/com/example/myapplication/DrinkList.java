@@ -134,23 +134,23 @@ public class DrinkList extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent();
                 intent.setClass(DrinkList.this ,FoodList.class);
-                if(image==0&&num>0){
+                if(image==0&&num>=0){
                     Value v = (Value)getApplicationContext();
                     v.setNumber14(num);
                 }
-                else if(image==1&&num>0){
+                else if(image==1&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber15(num);
 
                 }
-                else if(image==2&&num>0){
+                else if(image==2&&num>=0){
 
                     Value v = (Value)getApplicationContext();
                     v.setNumber16(num);
 
                 }
-                if(image==3&&num>0) {
+                if(image==3&&num>=0) {
 
                     Value v = (Value) getApplicationContext();
                     v.setNumber17(num);
